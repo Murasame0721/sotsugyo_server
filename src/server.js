@@ -1,6 +1,5 @@
 /*
  * 这个组件用于管理数据库
- * 功能包括：查询记录数、得到所有记录、得到所有用户的名字、创建和修改记录
 */
 
 const { Record } = require('../module.js')
@@ -29,6 +28,10 @@ records.allName = async function(){
         allName.push(element.name)
     });
     return allName
+}
+
+records.readOne = async function(name){
+    return await Record.findOne({name:name});
 }
 
 records.newOne = async function(information){
@@ -71,7 +74,7 @@ records.findOne = async function(name){
 records.edit = async function(name,information){
     //更改记录
 
-    if(!await records.findOne(name)) throw 'program error: try to edit a record which does not exist ';
+    if(!await records.findOne({name:name})) throw 'program error: try to edit a record which does not exist ';
     //防止奇葩错误
 
     let result = undefined;

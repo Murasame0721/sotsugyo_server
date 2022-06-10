@@ -1,0 +1,85 @@
+@url=http://localhost:3000/api
+@json=Content-Type: application/json
+@admin= Authorization: 60c4a2241e82a23e3c96336d
+
+### 注册管理员
+post {{url}}/admin
+{{json}}
+
+{
+    "command": "registerAdmin"
+}
+
+### Hello world
+get {{url}}
+
+### 注册普通用户
+post {{url}}/admin
+{{json}}
+{{admin}}
+
+{
+    "command": "registerUser",
+    "key": "1dsfgfhgj223",
+    "name": "测试用户"
+}
+
+### 所有用户
+post {{url}}/admin
+{{json}}
+{{admin}}
+
+{
+    "command": "allUser"
+}
+
+### 管理员发送文字信息
+post {{url}}/admin
+{{json}}
+{{admin}}
+
+{
+    "command":"message",
+    "recordType":"text",
+    "message": "1234"
+}
+
+### 管理员发送分支信息
+post {{url}}/admin
+{{json}}
+{{admin}}
+
+{
+    "command":"message",
+    "recordType":"fork",
+    "message": {
+        "question":"1+1?",
+        "options":[
+            "1","2","3","4"
+        ]
+    }
+}
+
+### 用户发文本消息
+post {{url}}/sendMessage
+{{json}}
+{{admin}}
+
+{
+    "recordType":"text",
+    "message":"1234567890"
+}
+
+### 查询所有记录
+get {{url}}/allRecord
+{{json}}
+{{admin}}
+
+### 登录
+post {{url}}/login
+{{json}}
+{{admin}}
+
+{
+    "key":"rsny4F5DA2"
+}
