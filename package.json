@@ -1,0 +1,28 @@
+{
+  "name": "sotsugyo_server",
+  "version": "1.0.0",
+  "description": "一个同学录服务器端",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js\\"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.qcly.top/Murasame/sotsugyo_server.git"
+  },
+  "keywords": [
+    "sotsugyo",
+    "server"
+  ],
+  "author": "murasame0721",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.3.6"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "eslint": "^8.17.0"
+  }
+}
