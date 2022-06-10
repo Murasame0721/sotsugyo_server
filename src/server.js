@@ -78,3 +78,7 @@ records.edit = async function(name,information){
     result = await Record.updateOne({name:name},information);
     return result
 }
+
+exports = {
+    records
+}
